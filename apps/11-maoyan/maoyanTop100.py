@@ -68,7 +68,7 @@ class Maoyan(object):
 
     def dumpData(self):
         with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '猫眼电影TOP100.json'),'w',encoding='utf-8') as f:
-            json.dump(self.results, f,ensure_ascii=False)
+            json.dump(self.results, f,ensure_ascii=False,indent=2)
 
 
 if __name__ == '__main__':
