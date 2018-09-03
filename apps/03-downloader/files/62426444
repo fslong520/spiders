@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/sinat_36246371/article/details/62426444"/> 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer" content="always">
+    <meta name="description" content="利用Python下载文件也是十分方便的：小文件下载下载小文件的话考虑的因素比较少，给了链接直接下载就好了：import requests
+image_url = &quot;https://www.python.org/static/community_logos/python-logo-master-v3-TM.png&quot;r = requests.get(image_url) # create HTTP re" />
+    <meta name="keywords" content="python" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <script src="https://csdnimg.cn/release/phoenix/vendor/tingyun/tingyun-rum-blog.js"></script>
+
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>利用Python下载文件 - CSDN博客</title>
+    
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-23915aa032.min.css">
+        <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-8195ccbe2d.min.css">
+
+    <script type="text/javascript">
+        var username = "sinat_36246371";
+        var blog_address = "https://blog.csdn.net/sinat_36246371";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = ""; 
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "https://passport.csdn.net/account/login?from=https://blog.csdn.net/sinat_36246371/article/details/62426444"
+        var blogUrl = "https://blog.csdn.net/";
+        //页面皮肤样式
+        var curSkin = "skin3-template";
+    </script>
+    <script type="text/javascript">
+        // Traffic Stats of the entire Web site By baidu
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?6bcd52f51e9b3dce32bec4a3997715ac";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+        // Traffic Stats of the entire Web site By baidu end
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="https://csdnimg.cn/rabbit/exposure-click/main-1.0.6.js"></script>
+    <!-- 新版上报 -->
+    <script src="//g.csdnimg.cn/track/1.0.1/track.js" type="text/javascript"></script>
+    <!-- 新版上报end -->
+            <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.3/css/sandalstrap.min.css"> 
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body>    
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.css">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+
+
+<header>
+	<div class="container d-flex clearfix">
+		<div class="title-box">
+			<h1 class="title-blog">
+				<a href="https://blog.csdn.net/sinat_36246371">K.Sun</a>
+			</h1>
+			<p class="description">用最简单的文字解释问题，用最少的步骤解决问题！</p>
+		</div>
+		<div class="opt-box d-flex justify-content-end">
+			<a class="btn btn-sm" href="https://blog.csdn.net/sinat_36246371/rss/list">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#csdnc-rss"></use>
+					</svg>RSS订阅</a>
+					</div>
+	</div>
+</header><script src="https://dup.baidustatic.com/js/ds.js"></script>
+<div class="container clearfix pt0" id="mainBox">
+    <main>
+        <div class="blog-content-box">
+	<div class="article-title-box">
+			<span class="article-type type-1 float-left">原</span>		<h1 class="title-article">利用Python下载文件</h1>
+	</div>
+	<div class="article-info-box">
+		<div class="article-bar-top d-flex">
+												<span class="time">2017年03月16日 16:32:47</span>
+			<div class="float-right">
+				<span class="read-count">阅读数：18424</span>
+											</div>
+		</div>
+	</div>
+	<article>
+		<div id="article_content" class="article_content clearfix csdn-tracking-statistics" data-pid="blog"  data-mod=popu_307  data-dsm = "post" >
+                    <div class="markdown_views">
+                <p>利用Python下载文件也是十分方便的：</p>
+
+
+
+<h2 id="小文件下载">小文件下载</h2>
+
+<p>下载小文件的话考虑的因素比较少，给了链接直接下载就好了：</p>
+
+<pre class="prettyprint"><code class="language-python hljs "><span class="hljs-keyword">import</span> requests
+image_url = <span class="hljs-string">"https://www.python.org/static/community_logos/python-logo-master-v3-TM.png"</span>
+
+r = requests.get(image_url) <span class="hljs-comment"># create HTTP response object</span>
+
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">"python_logo.png"</span>,<span class="hljs-string">'wb'</span>) <span class="hljs-keyword">as</span> f:
+    f.write(r.content)</code></pre>
+
+
+
+<h2 id="大文件下载">大文件下载</h2>
+
+<p>如果是小文件的话，一次性下载就OK了，但是如果文件比较大的话，那么下载下来的文件先放在内存中，内存还是比较有压力的。所以为了防止内存不够用的现象出现，我们要想办法把下载的文件分块写到磁盘中：</p>
+
+<pre class="prettyprint"><code class="language-python hljs "><span class="hljs-keyword">import</span> requests
+
+file_url = <span class="hljs-string">"http://codex.cs.yale.edu/avi/db-book/db4/slide-dir/ch1-2.pdf"</span>
+
+r = requests.get(file_url, stream=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-keyword">with</span> open(<span class="hljs-string">"python.pdf"</span>, <span class="hljs-string">"wb"</span>) <span class="hljs-keyword">as</span> pdf:
+    <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> r.iter_content(chunk_size=<span class="hljs-number">1024</span>):
+        <span class="hljs-keyword">if</span> chunk:
+            pdf.write(chunk)</code></pre>
+
+
+
+<h2 id="批量文件下载">批量文件下载：</h2>
+
+<p>批量文件下载的思路也很简单，首先读取网页的内容，再从网页中抽取链接信息，比如通过a标签，然后再从抽取出的链接中过滤出我们想要的链接，比如在本例中，我们只想下载MP4文件，那么我们可以通过文件名过滤所有链接：</p>
+
+<pre class="prettyprint"><code class="language-python hljs "><span class="hljs-keyword">import</span> requests
+<span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup
+
+archive_url = <span class="hljs-string">"http://www-personal.umich.edu/~csev/books/py4inf/media/"</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_video_links</span><span class="hljs-params">()</span>:</span>
+    r = requests.get(archive_url)
+    soup = BeautifulSoup(r.content, <span class="hljs-string">'html5lib'</span>)
+    links = soup.findAll(<span class="hljs-string">'a'</span>)
+    video_links = [archive_url + link[<span class="hljs-string">'href'</span>] <span class="hljs-keyword">for</span> link <span class="hljs-keyword">in</span> links <span class="hljs-keyword">if</span> link[<span class="hljs-string">'href'</span>].endswith(<span class="hljs-string">'mp4'</span>)]
+
+    <span class="hljs-keyword">return</span> video_links
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">download_video_series</span><span class="hljs-params">(video_links)</span>:</span>
+    <span class="hljs-keyword">for</span> link <span class="hljs-keyword">in</span> video_links:
+        file_name = link.split(<span class="hljs-string">'/'</span>)[-<span class="hljs-number">1</span>]
+
+        print(<span class="hljs-string">"Downloading file:%s"</span> % file_name)
+        r = requests.get(link, stream=<span class="hljs-keyword">True</span>)
+
+        <span class="hljs-comment"># download started</span>
+        <span class="hljs-keyword">with</span> open(file_name, <span class="hljs-string">'wb'</span>) <span class="hljs-keyword">as</span> f:
+            <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> r.iter_content(chunk_size=<span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>):
+                <span class="hljs-keyword">if</span> chunk:
+                    f.write(chunk)
+
+        print(<span class="hljs-string">"%s downloaded!\n"</span> % file_name)
+
+
+    print(<span class="hljs-string">"All videos downloaded!"</span>)
+
+    <span class="hljs-keyword">return</span>
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">"__main__"</span>:
+    video_links = get_video_links()
+    download_video_series(video_links)</code></pre>            </div>
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/markdown_views-ea0013b516.css" />
+                </div>
+				<div class="hide-article-box text-center">
+			<a class="btn btn-red-hollow" id="btn-readmore" data-track-view='{"mod":"popu_376","con":",https://blog.csdn.net/sinat_36246371/article/details/62426444,"}' data-track-click='{"mod":"popu_376","con":",https://blog.csdn.net/sinat_36246371/article/details/62426444,"}'>阅读更多</a>
+		</div>
+        	</article>
+	
+		<div class="article-bar-bottom">
+				<div class="article-copyright">
+			版权声明：本文为博主原创文章，未经博主允许不得转载。			https://blog.csdn.net/sinat_36246371/article/details/62426444		</div>
+						<div class="tags-box artic-tag-box">
+			<span class="label">文章标签：</span>
+						<a data-track-click='{"mod":"popu_626","con":"python"}' data-track-view='{"mod":"popu_626","con":"python"}' class="tag-link" href="http://so.csdn.net/so/search/s.do?q=python&t=blog" target="_blank">python						</a>
+		</div>
+						<div class="tags-box">
+			<span class="label">个人分类：</span>
+						<a class="tag-link" href="https://blog.csdn.net/sinat_36246371/article/category/6461872"  target="_blank">Python						</a>
+		</div>
+								<div class="tags-box hot-word">
+			<span class="label">相关热词：</span>
+						<a class="tag-link" href="https://blog.csdn.net/bossxu_/article/details/54378742" target="_blank">
+			svn利用			</a>
+						<a class="tag-link" href="https://blog.csdn.net/self_realian/article/details/72724307" target="_blank">
+			oracle利用			</a>
+						<a class="tag-link" href="https://blog.csdn.net/qq_29572055/article/details/52125905" target="_blank">
+			phpx00利用			</a>
+						<a class="tag-link" href="https://blog.csdn.net/god_7z1/article/details/71076358" target="_blank">
+			smb利用			</a>
+						<a class="tag-link" href="https://blog.csdn.net/linuxnews/article/details/51003637" target="_blank">
+			telnet利用			</a>
+					</div>
+			</div>
+	
+	<!-- !empty($pre_next_article[0]) -->
+			<div class="related-article related-article-prev text-truncate">
+		<a href="https://blog.csdn.net/sinat_36246371/article/details/62425962">
+			<span>上一篇</span>bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: html5lib		</a>
+	</div>
+				<div class="related-article related-article-next text-truncate">
+		<a href="https://blog.csdn.net/sinat_36246371/article/details/62890849">
+			<span>下一篇</span>/usr/bin/env: ‘node’: No such file or directory		</a>
+	</div>
+	</div>
+<script>
+    $(".MathJax").remove();
+</script>
+
+<!-- 博客详情页PC增加广告系统刷量代码 -->
+<div id="a52b5334d" style="width: 1px; height: 1px; display: none;">
+<script id="adJs52b5334"></script>
+<script>document.getElementById("adJs52b5334").src = "https://ads.csdn.net/js/opt/52b5334.js?t=" + Math.random();</script>
+</div>
+
+<script type="text/javascript" src="https://static-blog.csdn.net/mdeditor/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+			"HTML-CSS": {
+					linebreaks: { automatic: true, width: "94%container" },
+					imageFont: null
+			},
+			tex2jax: {
+				preview: "none"
+			},
+			mml2jax: {
+				preview: 'none'
+			}
+	});
+</script>
+<script>
+	(function(){
+		var btnReadmore = $("#btn-readmore");
+		if(btnReadmore.length>0){
+			var winH = $(window).height();
+			var articleBox = $("div.article_content");
+			var artH = articleBox.height();
+			if(artH > winH*2){
+				articleBox.css({
+					'height':winH*2+'px',
+					'overflow':'hidden'
+				})
+				btnReadmore.click(function(){
+					articleBox.removeAttr("style");
+					$(this).parent().remove();
+				})
+			}else{
+				btnReadmore.parent().remove();
+			}
+		}
+	})()
+</script>
+        <div class="p4course_target" ></div><script>window.p4sdk_enable_courseBox=true</script>        <a id="commentBox"></a>
+<div class="comment-box">
+	  	<div class="unlogin-box text-center">
+		想对作者说点什么？
+		<!-- $curl 当前地址 -->
+		<a href="https://passport.csdn.net/account/login?from=https://blog.csdn.net/sinat_36246371/article/details/62426444#commentBox" class="btn btn-sm btn-red">我来说一句</a>
+	</div>
+			<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<button class="btn btn-sm btn-link-blue" id="btnMoreComment"></button>
+		</div>
+	</div>
+</div>        <div class="recommend-box">
+            		<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/AaronWu2012/article/details/52565151,BlogCommendESEnWordWeight_11"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/AaronWu2012/article/details/52565151,BlogCommendESEnWordWeight_11"}'>
+		<div class="float-left">
+			<h4 class="text-truncate oneline">
+				<a href="https://blog.csdn.net/AaronWu2012/article/details/52565151" target="_blank" title="<em>python</em><em>下载文件</em>的三种方法">
+					<em>python</em><em>下载文件</em>的三种方法				</a>
+			</h4>
+			<div class="info-box d-flex align-content-center">
+				<p>
+					<a class="avatar" src="https://blog.csdn.net/AaronWu2012" target="_blank">
+						<img src="https://avatar.csdn.net/2/0/6/3_aaronwu2012.jpg" alt="AaronWu2012" class="avatar-pic">
+						<span class="namebox">
+							<span class="name">AaronWu2012</span>
+							<span class="triangle"></span>
+						</span>
+					</a>
+				</p>
+				<p class="date-and-readNum">
+					<span class="date hover-show">09-17</span>
+					<span class="read-num hover-hide">
+						<svg class="icon csdnc-yuedushu" aria-hidden="true">
+							<use xlink:href="#csdnc-yuedushu"></use>
+						</svg>
+						9643</span>
+					</p>
+				</div>
+				<p class="content oneline">
+					<a class="oneline" href="https://blog.csdn.net/AaronWu2012/article/details/52565151" target="_blank" >
+						python下载文件的三种方法
+
+Python开发中时长遇到要下载文件的情况，最常用的方法就是通过Http利用urllib或者urllib2模块。当然你也可以利用ftplib从ftp站点下载文件。...					</a>
+				</p>
+		</div>
+				</div>
+					<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/u011436429/article/details/80524824,BlogCommendESEnWordWeight_2"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u011436429/article/details/80524824,BlogCommendESEnWordWeight_2"}'>
+		<div class="float-left">
+			<h4 class="text-truncate oneline">
+				<a href="https://blog.csdn.net/u011436429/article/details/80524824" target="_blank" title="<em>Python</em> <em>下载文件</em>">
+					<em>Python</em> <em>下载文件</em>				</a>
+			</h4>
+			<div class="info-box d-flex align-content-center">
+				<p>
+					<a class="avatar" src="https://blog.csdn.net/u011436429" target="_blank">
+						<img src="https://avatar.csdn.net/4/F/5/3_u011436429.jpg" alt="u011436429" class="avatar-pic">
+						<span class="namebox">
+							<span class="name">u011436429</span>
+							<span class="triangle"></span>
+						</span>
+					</a>
+				</p>
+				<p class="date-and-readNum">
+					<span class="date hover-show">05-31</span>
+					<span class="read-num hover-hide">
+						<svg class="icon csdnc-yuedushu" aria-hidden="true">
+							<use xlink:href="#csdnc-yuedushu"></use>
+						</svg>
+						40</span>
+					</p>
+				</div>
+				<p class="content oneline">
+					<a class="oneline" href="https://blog.csdn.net/u011436429/article/details/80524824" target="_blank" >
+						import urllib.request
+
+urllib.request.urlretrieve('http://...hxbl.rar','hxbl.rar')					</a>
+				</p>
+		</div>
+						<div class="img-box float-right">
+				<a href="https://blog.csdn.net/u011436429/article/details/80524824">
+					<img src="https://csdnimg.cn/release/phoenix/article_rand_pic/lang/lang21.jpg" alt="">	
+				</a>
+			</div>
+			</div>
+									<!-- 第四范式广告开关 -->
+				<script>window.p4sdk_enable_recommendBox=true</script>
+			
+				<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/qq_40259565/article/details/78275731,BlogCommendESEnWordWeight_26"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_40259565/article/details/78275731,BlogCommendESEnWordWeight_26"}'>
+		<div class="float-left">
+			<h4 class="text-truncate oneline">
+				<a href="https://blog.csdn.net/qq_40259565/article/details/78275731" target="_blank" title="<em>利用</em><em>python</em>下载网页上的文件">
+					<em>利用</em><em>python</em>下载网页上的文件				</a>
+			</h4>
+			<div class="info-box d-flex align-content-center">
+				<p>
+					<a class="avatar" src="https://blog.csdn.net/qq_40259565" target="_blank">
+						<img src="https://avatar.csdn.net/0/4/8/3_qq_40259565.jpg" alt="qq_40259565" class="avatar-pic">
+						<span class="namebox">
+							<span class="name">qq_40259565</span>
+							<span class="triangle"></span>
+						</span>
+					</a>
+				</p>
+				<p class="date-and-readNum">
+					<span class="date hover-show">10-18</span>
+					<span class="read-num hover-hide">
+						<svg class="icon csdnc-yuedushu" aria-hidden="true">
+							<use xlink:href="#csdnc-yuedushu"></use>
+						</svg>
+						3165</span>
+					</p>
+				</div>
+				<p class="content oneline">
+					<a class="oneline" href="https://blog.csdn.net/qq_40259565/article/details/78275731" target="_blank" >
+						import urllib.request
+resp=urllib.request.urlopen('http://www.baidu.com')
+html=resp.read()
+print(htm...					</a>
+				</p>
+		</div>
+						<div class="img-box float-right">
+				<a href="https://blog.csdn.net/qq_40259565/article/details/78275731">
+					<img src="https://csdnimg.cn/release/phoenix/article_rand_pic/ai/ai1.jpg" alt="">	
+				</a>
+			</div>
+			</div>
+						<div class="recommend-item-box recommend-download-box clearfix" data-track-view='{"mod":"popu_387","con":",https://download.csdn.net/download/sinat_23397339/10365135,BlogCommendESEnWordWeight_0"}' data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/sinat_23397339/10365135,BlogCommendESEnWordWeight_0"}'>
+			<div class="content float-left">
+				<h4 class="text-truncate oneline">
+					<a href="https://download.csdn.net/download/sinat_23397339/10365135" target="_blank">
+						<em>python</em>爬虫批量下载apk文件					</a>
+				</h4>
+				<p>
+					<span class="data">2018年04月21日 </span>
+					<span class="size">2KB</span>
+					<span class="type">下载</span>
+				</p>
+			</div>
+			<div class="img-box float-right">
+				<a href="https://download.csdn.net/download/sinat_23397339/10365135" target="_blank" strategy="BlogCommendESEnWordWeight_0">
+					<img src="https://csdnimg.cn/release/download/old_static/images/minetype/unkonw.svg" alt="">
+				</a>
+			</div>
+		</div>
+					<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37422217/article/details/78618764,BlogCommendESEnWordWeight_1"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37422217/article/details/78618764,BlogCommendESEnWordWeight_1"}'>
+		<div class="float-left">
+			<h4 class="text-truncate oneline">
+				<a href="https://blog.csdn.net/m0_37422217/article/details/78618764" target="_blank" title="<em>python</em>3<em>下载文件</em>">
+					<em>python</em>3<em>下载文件</em>				</a>
+			</h4>
+			<div class="info-box d-flex align-content-center">
+				<p>
+					<a class="avatar" src="https://blog.csdn.net/m0_37422217" target="_blank">
+						<img src="https://avatar.csdn.net/B/2/A/3_m0_37422217.jpg" alt="m0_37422217" class="avatar-pic">
+						<span class="namebox">
+							<span class="name">m0_37422217</span>
+							<span class="triangle"></span>
+						</span>
+					</a>
+				</p>
+				<p class="date-and-readNum">
+					<span class="date hover-show">11-23</span>
+					<span class="read-num hover-hide">
+						<svg class="icon csdnc-yuedushu" aria-hidden="true">
+							<use xlink:href="#csdnc-yuedushu"></use>
+						</svg>
+						3137</span>
+					</p>
+				</div>
+				<p class="content oneline">
+					<a class="oneline" href="https://blog.csdn.net/m0_37422217/article/details/78618764" target="_blank" >
+						python3下载文件
+今天学习了周志华老师的机器学习导论，想从网上下载老师的讲义，进入网站发现要下载的东西还不少，有14篇(虽然也不算太多啦)
+发现要下载的讲义的url地址格式很类似哇，比如：...					</a>
+				</p>
+		</div>
+				</div>
+					<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/Michael_Lbs/article/details/69389133,BlogCommendESEnWordWeight_3"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/Michael_Lbs/article/details/69389133,BlogCommendESEnWordWeight_3"}'>
+		<div class="float-left">
+			<h4 class="text-truncate oneline">
+				<a href="https://blog.csdn.net/Michael_Lbs/article/details/69389133" target="_blank" title="django+<em>python</em> 实现<em>下载文件</em>">
+					django+<em>python</em> 实现<em>下载文件</em>				</a>
+			</h4>
+			<div class="info-box d-flex align-content-center">
+				<p>
+					<a class="avatar" src="https://blog.csdn.net/Michael_Lbs" target="_blank">
+						<img src="https://avatar.csdn.net/3/6/6/3_michael_lbs.jpg" alt="Michael_Lbs" class="avatar-pic">
+						<span class="namebox">
+							<span class="name">Michael_Lbs</span>
+							<span class="triangle"></span>
+						</span>
+					</a>
+				</p>
+				<p class="date-and-readNum">
+					<span class="date hover-show">04-06</span>
+					<span class="read-num hover-hide">
+						<svg class="icon csdnc-yuedushu" aria-hidden="true">
+							<use xlink:href="#csdnc-yuedushu"></use>
+						</svg>
+						873</span>
+					</p>
+				</div>
+				<p class="content oneline">
+					<a class="oneline" href="https://blog.csdn.net/Michael_Lbs/article/details/69389133" target="_blank" >
+						转自：出处1，出处2
+1. 新建一个文件下载的模板（本文是基于bootstrap的模板）：
+
+
+      
+          
+          第一种方法，直接把链接地址指向要下载的静态...					</a>
+				</p>
+		</div>
+						<div class="img-box float-right">
+				<a href="https://blog.csdn.net/Michael_Lbs/article/details/69389133">
+					<img src="https://csdnimg.cn/release/phoenix/article_rand_pic/web/web9.jpg" alt="">	
+				</a>
+			</div>
+			</div>
+								<div class="recommend-item-box recommend-ad-box" id="a_d_feed_0"></div>
+			<script>
+				var width = $("div.recommend-box").outerWidth() - 48;
+				NEWS_FEED({
+					w: width,
+					h: 60,
+					showid: 'Afihld',
+					placeholderId: 'a_d_feed_0',
+					inject: 'define',
+					define: {
+						imagePosition: 'right',
+						imageBorderRadius: 0,
+						imageWidth: 90,
+						imageHeight: 60,
+						imageFill: 'clip',
+						displayImage: true,
+						displayTitle: true,
+						titleFontSize: 20,
+						titleFontColor: '#333',
+						titleFontFamily: 'Microsoft Yahei',
+						titleFontWeight: 'bold',
+						titlePaddingTop: 0,
+						titlePaddingRight: 0,
+						titlePaddingBottom: 10,
+						titlePaddingLeft: 0,
+						displayDesc: true,
+						descFontSize: 14,
+						descPaddingLeft: 14,
+						descFontColor: '#6b6b6b',
+						descFontFamily: 'Microsoft Yahei',
+						paddingTop: 0,
+						paddingRight: 0,
+						paddingBottom: 0,
+						paddingLeft: 0,
+						backgroundColor: '#fff',
+						hoverColor: '#ca0c16'
+					}
+				})
+			</script>
+						<div class="recommend-item-box recommend-download-box clearfix" data-track-view='{"mod":"popu_387","con":",https://download.csdn.net/download/andyhanjun/483132,BlogCommendESEnWordWeight_4"}' data-track-click='{"mod":"popu_387","con":",https://download.csdn.net/download/andyhanjun/483132,BlogCommendESEnWordWeight_4"}'>
+			<div class="content float-left">
+				<h4 class="text-truncate oneline">
+					<a href="https://download.csdn.net/download/andyhanjun/483132" target="_blank">
+						<em>利用</em>ftp<em>下载文件</em>					</a>
+				</h4>
+				<p>
+					<span class="data">2008年06月04日 </span>
+					<span class="size">15KB</span>
+					<span class="type">下载</span>
+				</p>
+			</div>
+			<div class="img-box float-right">
+				<a href="https://download.csdn.net/download/andyhanjun/483132" target="_blank" strategy="BlogCommendESEnWordWeight_4">
+					<img src="https://csdnimg.cn/release/download/old_static/images/minetype/zip.svg" alt="">
+				</a>
+			</div>
+		</div>
+					<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/stlst/article/details/52471453,BlogCommendESEnWordWeight_5"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/stlst/article/details/52471453,BlogCommendESEnWordWeight_5"}'>
+		<div class="float-left">
+			<h4 class="text-truncate oneline">
+				<a href="https://blog.csdn.net/stlst/article/details/52471453" target="_blank" title="<em>python</em> <em>下载文件</em>到文件夹下的问题">
+					<em>python</em> <em>下载文件</em>到文件夹下的问题				</a>
+			</h4>
+			<div class="info-box d-flex align-content-center">
+				<p>
+					<a class="avatar" src="https://blog.csdn.net/stlst" target="_blank">
+						<img src="https://avatar.csdn.net/B/7/6/3_stlst.jpg" alt="stlst" class="avatar-pic">
+						<span class="namebox">
+							<span class="name">stlst</span>
+							<span class="triangle"></span>
+						</span>
+					</a>
+				</p>
+				<p class="date-and-readNum">
+					<span class="date hover-show">09-08</span>
+					<span class="read-num hover-hide">
+						<svg class="icon csdnc-yuedushu" aria-hidden="true">
+							<use xlink:href="#csdnc-yuedushu"></use>
+						</svg>
+						825</span>
+					</p>
+				</div>
+				<p class="content oneline">
+					<a class="oneline" href="https://blog.csdn.net/stlst/article/details/52471453" target="_blank" >
+						方法一：
+import urllib 
+import urllib2 
+import requests
+print &quot;downloading with urllib&quot; 
+url = 'http://w...					</a>
+				</p>
+		</div>
+				</div>
+					<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/xfyangle/article/details/60779160,BlogCommendESEnWordWeight_6"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/xfyangle/article/details/60779160,BlogCommendESEnWordWeight_6"}'>
+		<div class="float-left">
+			<h4 class="text-truncate oneline">
+				<a href="https://blog.csdn.net/xfyangle/article/details/60779160" target="_blank" title="<em>python</em> requests.get() 下载大文件">
+					<em>python</em> requests.get() 下载大文件				</a>
+			</h4>
+			<div class="info-box d-flex align-content-center">
+				<p>
+					<a class="avatar" src="https://blog.csdn.net/xfyangle" target="_blank">
+						<img src="https://avatar.csdn.net/F/7/1/3_xfyangle.jpg" alt="xfyangle" class="avatar-pic">
+						<span class="namebox">
+							<span class="name">xfyangle</span>
+							<span class="triangle"></span>
+						</span>
+					</a>
+				</p>
+				<p class="date-and-readNum">
+					<span class="date hover-show">03-07</span>
+					<span class="read-num hover-hide">
+						<svg class="icon csdnc-yuedushu" aria-hidden="true">
+							<use xlink:href="#csdnc-yuedushu"></use>
+						</svg>
+						1467</span>
+					</p>
+				</div>
+				<p class="content oneline">
+					<a class="oneline" href="https://blog.csdn.net/xfyangle/article/details/60779160" target="_blank" >
+						当使用requests的get下载大文件/数据时，建议使用使用stream模式。
+
+当把get函数的stream参数设置成False时，它会立即开始下载文件并放到内存中，如果文件过大，有可能导致内...					</a>
+				</p>
+		</div>
+						<div class="img-box float-right">
+				<a href="https://blog.csdn.net/xfyangle/article/details/60779160">
+					<img src="https://csdnimg.cn/release/phoenix/article_rand_pic/lang/lang21.jpg" alt="">	
+				</a>
+			</div>
+			</div>
+					<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/KWSY2008/article/details/49203621,BlogCommendESEnWordWeight_7"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/KWSY2008/article/details/49203621,BlogCommendESEnWordWeight_7"}'>
+		<div class="float-left">
+			<h4 class="text-truncate oneline">
+				<a href="https://blog.csdn.net/KWSY2008/article/details/49203621" target="_blank" title="<em>python</em><em>下载文件</em>">
+					<em>python</em><em>下载文件</em>				</a>
+			</h4>
+			<div class="info-box d-flex align-content-center">
+				<p>
+					<a class="avatar" src="https://blog.csdn.net/KWSY2008" target="_blank">
+						<img src="https://avatar.csdn.net/A/6/4/3_kwsy2008.jpg" alt="KWSY2008" class="avatar-pic">
+						<span class="namebox">
+							<span class="name">KWSY2008</span>
+							<span class="triangle"></span>
+						</span>
+					</a>
+				</p>
+				<p class="date-and-readNum">
+					<span class="date hover-show">11-29</span>
+					<span class="read-num hover-hide">
+						<svg class="icon csdnc-yuedushu" aria-hidden="true">
+							<use xlink:href="#csdnc-yuedushu"></use>
+						</svg>
+						557</span>
+					</p>
+				</div>
+				<p class="content oneline">
+					<a class="oneline" href="https://blog.csdn.net/KWSY2008/article/details/49203621" target="_blank" >
+						使用python下载文件可以使用urllib模块的urlretrieve函数，使用非常简单，第一个参数传入url,第二个参数传入filename，就是你希望本地保存的文件名字。这里要注意的一点是，如果...					</a>
+				</p>
+		</div>
+						<div class="img-box float-right">
+				<a href="https://blog.csdn.net/KWSY2008/article/details/49203621">
+					<img src="https://csdnimg.cn/release/phoenix/article_rand_pic/web/web7.jpg" alt="">	
+				</a>
+			</div>
+			</div>
+			
+            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+    <aside>
+		    <div id="asideProfile" class="aside-box">
+    <h3 class="aside-title">个人资料</h3>
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/sinat_36246371">
+                <img src="https://avatar.csdn.net/E/4/5/3_sinat_36246371.jpg" class="avatar_pic">
+            </a>
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a href="https://blog.csdn.net/sinat_36246371" target="_blank" class="text-truncate" id="uid">K.Sun</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                                <a class="btn btn-sm btn-red-hollow" href="https://passport.csdn.net/account/login?from=https://blog.csdn.net/sinat_36246371/article/details/62426444" target="_self">关注</a>
+                            </span>
+                    </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="256">
+                        <dt><a href="https://blog.csdn.net/sinat_36246371?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/sinat_36246371?t=1"><span class="count">256</span></a></dd>
+                    </dl>
+        <dl class="text-center" title="53">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">53</span></dd>
+        </dl>
+        <dl class="text-center" title="66">
+            <dt>喜欢</dt>
+            <dd><span class="count">66</span></dd>
+        </dl>
+        <dl class="text-center" title="32">
+            <dt>评论</dt>
+            <dd><span class="count">32</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="6级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-6"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="409050">
+                40万+            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="6925">
+                6925            </dd>
+        </dl>
+        <dl title="4601">
+            <dt>排名：</dt>
+            <dd>4601</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+                        <a class="icon-badge" title="持之以恒">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#csdnc-m-lasting"></use>
+            </svg>
+            <div class="icon-arrow"></div>
+            <div class="grade-detail-box item2">
+                <div class="pos-box">
+                    <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#csdnc-m-lasting"></use>
+                        </svg>
+                        <p>持之以恒</p>
+                    </div>
+                    <div class="right-box d-flex justify-content-center align-items-center">
+                        授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！
+                    </div>
+                </div>
+            </div>
+        </a>
+                            </div>
+    </div>		    <div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-mod="popu_4" style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <!-- 广告位：PC-博客内页-默认-300x250 -->
+                      <script type="text/javascript" src="//cee1.iteye.com/lgyyovfyh.js"></script>    </div>
+</div>
+		    <div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/sinat_36246371/article/details/80776463" target="_blank">如何设计RESTful API</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/sinat_36246371/article/details/80732031" target="_blank">Git: remote: Invalid username or password</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/sinat_36246371/article/details/80658784" target="_blank">微服务生态系统及生产可用概要</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/sinat_36246371/article/details/80602289" target="_blank">ES6的几个新特征</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/sinat_36246371/article/details/79995661" target="_blank">Git撤销本地commit</a>
+            </li>
+                    </ul>
+    </div>
+</div>
+		    		    <div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456337">
+                    Algorithm                    <span class="count float-right">138篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6460321">
+                    Dynamic Programming                    <span class="count float-right">15篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456362">
+                    Java                    <span class="count float-right">49篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456363">
+                    C++                    <span class="count float-right">9篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456365">
+                    Tomcat                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456364">
+                    Eclipse                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456368">
+                    Google                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456373">
+                    IntelliJ IDEA                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456375">
+                    MySQL                    <span class="count float-right">14篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456374">
+                    Microsoft Visual Studio                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456418">
+                    Leetcode                    <span class="count float-right">112篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456376">
+                    SQL                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456379">
+                    Interview                    <span class="count float-right">22篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456380">
+                    JavaScript                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6456384">
+                    Spring                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6460081">
+                    Array                    <span class="count float-right">13篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6460306">
+                    Multi-Thread                    <span class="count float-right">9篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6460308">
+                    Container                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6460645">
+                    geeksforgeeks                    <span class="count float-right">12篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461514">
+                    Tree                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461515">
+                    Data Structure                    <span class="count float-right">49篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461516">
+                    Graph                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461790">
+                    Sort                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461797">
+                    DataBase                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461828">
+                    OS                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461831">
+                    Linux                    <span class="count float-right">18篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461832">
+                    Computer Network                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461855">
+                    GitHub                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461872">
+                    Python                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6461874">
+                    Design Pattern                    <span class="count float-right">9篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6464169">
+                    String                    <span class="count float-right">20篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6464175">
+                    Vim                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6464195">
+                    Ubuntu                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6464895">
+                    Amazon                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6466850">
+                    JVM                    <span class="count float-right">19篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6487944">
+                    Android                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6498759">
+                    GC                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6499722">
+                    Shell                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6501670">
+                    sed                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6506375">
+                    OpenCV                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6727698">
+                    C                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6727699">
+                    EMC                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6728208">
+                    PyCharm                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6728284">
+                    HTTP                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6730832">
+                    Machine Learning                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6730833">
+                    AI                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6730835">
+                    Digital Image Processing                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6737597">
+                    MyBatis                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6745652">
+                    Search                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6796315">
+                    nodejs                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6826846">
+                    spring-boot                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6844329">
+                    git                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6861818">
+                    Maven                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6886768">
+                    jdk1-8                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6912831">
+                    二叉树                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6928843">
+                    Kotlin                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6960464">
+                    Sping                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6961583">
+                    Big-Data                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/6961584">
+                    MapReduce                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7008602">
+                    SOAP                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7008603">
+                    RESTful                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7008606">
+                    Web Service                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7010548">
+                    Hadoop                    <span class="count float-right">10篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7010598">
+                    Data                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7011151">
+                    HBase                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7011552">
+                    Cache                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7208370">
+                    负载均衡算法                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7208371">
+                    面试                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7208443">
+                    分布式系统                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7208497">
+                    Threadpool                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7211119">
+                    Redis                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7485983">
+                    Mac                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7489357">
+                    Rails                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/category/7729203">
+                    Microservice                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+		    <div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2018/06">
+                    2018年6月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2018/04">
+                    2018年4月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2018/03">
+                    2018年3月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2018/02">
+                    2018年2月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2018/01">
+                    2018年1月                    <span class="count float-right">7篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/12">
+                    2017年12月                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/11">
+                    2017年11月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/10">
+                    2017年10月                    <span class="count float-right">16篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/07">
+                    2017年7月                    <span class="count float-right">19篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/06">
+                    2017年6月                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/05">
+                    2017年5月                    <span class="count float-right">23篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/04">
+                    2017年4月                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/03">
+                    2017年3月                    <span class="count float-right">17篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/02">
+                    2017年2月                    <span class="count float-right">31篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2017/01">
+                    2017年1月                    <span class="count float-right">35篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2016/12">
+                    2016年12月                    <span class="count float-right">75篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2016/11">
+                    2016年11月                    <span class="count float-right">55篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/sinat_36246371/article/month/2016/10">
+                    2016年10月                    <span class="count float-right">48篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+		    <div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/sinat_36246371/article/details/60140664#comments">朴素贝叶斯分类器（Naive Ba...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/qq_41058838" class="user-name" target="_blank">qq_41058838</a>：所以P(X[表情]y)在这里的意思就是已知天气情况为：“Rainy outlook”, “Temp...                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/sinat_36246371/article/details/53709625#comments">Java中的LinkedList的...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/WKX18330698534" class="user-name" target="_blank">WKX18330698534</a>：感谢博主分享                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/sinat_36246371/article/details/72902406#comments">Spring Boot与Sprin...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/weixin_39616603" class="user-name" target="_blank">weixin_39616603</a>：不错，可以作为面试题                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/sinat_36246371/article/details/53465328#comments">StackOverflowErro...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/xcy1193068639" class="user-name" target="_blank">xcy1193068639</a>：没看出来啥区别啊博主                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/sinat_36246371/article/details/53170166#comments">com.sun.mirror的ja...</a>
+                <p class="comment">
+                    <a href="https://my.csdn.net/H_cming" class="user-name" target="_blank">H_cming</a>：感谢                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+		<div id="asideFooter">
+			
+		<div class="aside-box">
+						<script type="text/javascript" src="//cee1.iteye.com/avneunkwb.js"></script>
+					</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="pulllog-box" style="display: block;">
+	<div class="pulllog clearfix">
+		<span class="text float-left">
+			<!-- 广告位：PC-博客内页底通 文字链位置 -->
+			<script>
+			(function() {
+				var s = "_" + Math.random().toString(36).slice(2);
+				document.write('<div id="baidufooter_0001"></div>');
+				(window.slotbydup=window.slotbydup || []).push({
+					id: '5851901',
+					container: 'baidufooter_0001',
+					size: '520,40',
+					display: 'inlay-fix'
+				});
+			})();
+			</script>
+			<script src="https://dup.baidustatic.com/js/os.js"></script>
+			<style>
+				#baidufooter_0001{
+					display: none !important;
+				}
+			</style>
+		</span>
+		<div class="pulllog-btn float-right clearfix">
+            <button class="pulllog-login float-left csdn-tracking-statistics tracking-click" data-mod="popu_557">
+                登录
+            </button>
+            <div class="pulllog-sigin float-left csdn-tracking-statistics tracking-click" data-mod="popu_558">
+                <a href="https://passport.csdn.net/account/mobileregister" target="_blank">注册</a>
+            </div>
+            <button class="btn-close">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#csdnc-times"></use>
+                </svg>
+            </button>
+		</div>
+	</div>
+</div>
+<div id="loginWrap" style="display:none"></div>
+<div class="tool-box">
+	<ul class="meau-list">
+		<li>
+			<button class="btn-like " title="点赞">
+				<svg class="icon active" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg><svg class="icon no-active" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<p>5</p>
+			</button>
+		</li>
+		<li>
+			<a class="btn-comments" title="写评论" href="#commentBox">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg><br>写评论			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<button class="btn-toc" title="目录">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg><br>目录
+			</button>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<button class="btn-bookmark" title="收藏">
+				<svg class="icon active" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg><svg class="icon no-active" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg><br>收藏
+			</button>
+		</li>
+				<li class="bdsharebuttonbox">
+			<a class="btn-comments bds_weixin" data-cmd="weixin" title="微信分享">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-wechat"></use>
+				</svg><br>微信
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<a class="btn-comments bds_tsina" data-cmd="tsina" title="微博分享">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-weibo"></use>
+				</svg><br>微博
+			</a>
+		</li>
+		<li class="bdsharebuttonbox">
+			<a class="btn-comments bds_qzone" data-cmd="qzone" title="QQ分享">
+				<svg class="icon" aria-hidden="true">
+					<use xlink:href="#csdnc-qq"></use>
+				</svg><br>QQ
+			</a>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script>
+    var recommendCount = 10;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var articleTit = "利用Python下载文件";
+    var ChannelId = 16;
+    var articleId = "62426444";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/sinat_36246371/article/details/62426444";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "requests%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+    var highlight = ["\u5229\u7528","python","\u4e0b\u8f7d\u6587\u4ef6"];//高亮数组
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.3/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.js"></script>
+<script src='https://csdnimg.cn/public/common/gotop/js/goTop-v1.0.min.js?v201803151422'></script>
+<script>
+    GoTop({
+        right: 8,
+        hasReport: true,
+        reportFun: function() {
+            showReport(false,"利用Python下载文件");
+        }
+    })
+</script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-a4f198c74c.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-518da8bacf.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-73eea35575.min.js"></script>
+<script src="https://csdnimg.cn/search/baidu_search-1.1.2.js?v=201802071056&autorun=true&install=true&keyword=requests%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6"  type="text/javascript"></script>
+</body>
+<div class="box-box-aways">
+    <a class="btn-remove">
+        关闭
+    </a>
+    <div id="adAways">
+        <script>
+            (function() {
+            (window.slotbydup=window.slotbydup || []).push({
+            id: '5868728',
+            container: 'adAways',
+            size: '250,500',
+            display: 'inlay-fix'
+            });
+            })();
+            </script>
+        <script src="https://dup.baidustatic.com/js/os.js"></script>
+    </div>
+</div>
+<div class="box-box-default">
+    <a class="btn-remove">
+        关闭
+    </a>
+    <script type="text/javascript" src="//cee1.iteye.com/mhzzjepzz.js"></script>
+</div>
+<div class="box-box-large">
+    <a class="btn-remove">
+        关闭
+    </a>
+    <script type="text/javascript" src="//cee1.iteye.com/idvveasfs.js"></script>
+</div>
+<!-- 第四范式SDK -->
+<script charset="utf-8" src="https://nbrecsys.4paradigm.com/resource/js/sdk-csdn-smallflow.prod.0723.js" async defer></script>
+
+<!-- 高亮未与 markdown兼容  -->
+</html>
