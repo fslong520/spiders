@@ -4,7 +4,7 @@
 ' 从字典存到数据库的函数 '
 
 __author__ = 'fslong'
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 
 import datetime
 import time
@@ -63,11 +63,11 @@ class MySQLConnection(object):
                     sql += """%s TEXT , """ % keys[i]
         sql += """PRIMARY KEY (`%s`))ENGINE=InnoDB DEFAULT CHARSET=utf8;""" % keys[
             0]
-        #print(sql)
+        # print(sql)
         self.executeSQL(sql)
 
     # 执行提交sql语句的函数：
-    def executeSQL(self, sql):
+    def executeSQL(self, sql, data={}):
         db = pymysql.connect(
             host=self.host,
             port=self.port,
@@ -83,7 +83,12 @@ class MySQLConnection(object):
                 cursor.execute(sql)
                 results = cursor.fetchall()
             else:
-                results = cursor.execute(sql)
+                if data == {}:
+                    cursor.execute(sql)
+                    results = cursor.fetchall()
+                else:
+                    cursor.execute(sql, data)
+                    results = cursor.fetchall()
                 # 提交到数据库执行：
                 db.commit()
                 # 获取所有记录列表
@@ -96,29 +101,23 @@ class MySQLConnection(object):
         db.close
         return results
 
-    # 插入数据的函数：
+    # 插入或者更新数据的函数（如果主键存在就更新，主键不存在就插入）：
     def insertData(self, dictData={}):
         if dictData != {}:
             self.dictData = dictData
         else:
             print('没有输入要存储的数据呀！')
-            #return None
+            # return None
         # 先看下表结构有没有生成，没有生成就生成一下:
-        #self.executeSQL()
+        # self.executeSQL()
         # 拼接sql语句：
-        sql = """INSERT INTO %s (""" % (self.tabName, )
-        for i in self.dictData:
-            sql += """%s,""" % i
-        sql = sql[0:-1] + """)""" + """VALUES("""
-        for i in self.dictData:
-            if isinstance(self.dictData[i],
-                          (int, float)):
-                string = self.dictData[i]
-            else:
-                string = '\"' + str(self.dictData[i]) + '\"'
-            sql += """%s,""" % string
-        sql = sql[0:-1] + """);"""
-        results = self.executeSQL(sql)
+        keys = ', '.join(dictData.keys())
+        values = ', '.join(['%s']*len(dictData))
+        sql = 'INSERT INTO {table}({keys})  VALUES ({values}) ON DUPLICATE KEY UPDATE'.format(
+            table=self.tabName, keys=keys, values=values)
+        update = ', '.join([" {key} = %s".format(key=key) for key in dictData])
+        sql += update
+        results = self.executeSQL(sql, tuple(dictData.values())*2)
         return results
 
     # 删除数据库内容的函数：

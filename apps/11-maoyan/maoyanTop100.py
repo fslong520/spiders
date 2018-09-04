@@ -41,8 +41,8 @@ class Maoyan(object):
         self.data = {}
         self.id = 0
 
-    def getData(self,offset):
-        self.params={'offset':offset}
+    def getData(self, offset):
+        self.params = {'offset': offset}
         response = requests.get(
             self.baseUrl, params=self.params, headers=self.headers)
         pqPage = pyquery.PyQuery(response.text)
@@ -54,12 +54,12 @@ class Maoyan(object):
             img = i('.board-img').attr('data-src').split('@')[0]
             star = i('.star').text()
             releasetime = i('.releasetime').text()
-            url=i('.movie-item-info > p > a').attr('href')
+            url = i('.movie-item-info > p > a').attr('href')
             score = i('.score').text()
             self.results.append({
-                'id':self.id,
-                'name': '《%s》'%name,
-                'url':'https://maoyan.com'+url,
+                'id': self.id,
+                'name': '《%s》' % name,
+                'url': 'https://maoyan.com'+url,
                 'img': img,
                 'star': star,
                 'releasetime': releasetime,
@@ -67,12 +67,12 @@ class Maoyan(object):
             })
 
     def dumpData(self):
-        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '猫眼电影TOP100.json'),'w',encoding='utf-8') as f:
-            json.dump(self.results, f,ensure_ascii=False,indent=2)
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '猫眼电影TOP100.json'), 'w', encoding='utf-8') as f:
+            json.dump(self.results, f, ensure_ascii=False, indent=2)
 
 
 if __name__ == '__main__':
     maoyan = Maoyan()
     for i in range(10):
-        maoyan.getData(i*10)    
+        maoyan.getData(i*10)
     maoyan.dumpData()
