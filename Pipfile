@@ -9,6 +9,10 @@ requests = "*"
 django = "*"
 pillow = "*"
 pymysql = "*"
+redis = "*"
+ipython = "*"
+selenium = "*"
+pymongo = "*"
 
 [dev-packages]
 
