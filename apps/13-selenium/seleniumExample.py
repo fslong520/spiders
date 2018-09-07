@@ -15,12 +15,21 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 def example():
+
     # 配置文件地址
     profile_directory = '/home/fslong/.mozilla/firefox/83l1qwct.default'
     # 加载配置配置
     profile = webdriver.FirefoxProfile(profile_directory)
-    browser = webdriver.Firefox(profile)
+    browser = webdriver.Firefox(profile)    
     browser.get('https://www.baidu.com')
+    # 无界面模式：
+    options = webdriver.FirefoxOptions()
+    options.set_headless()
+    # options.add_argument('-headless')
+    options.add_argument('--disable-gpu')
+    browserDriver=webdriver.Firefox(firefox_options=options)
+    browserDriver.get('https://www.baidu.com')
+
     '''
     inputFirst = browser.find_element_by_id('q')
     inputSecond = browser.find_element_by_name('q')
