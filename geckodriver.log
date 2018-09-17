@@ -3153,3 +3153,38 @@ JavaScript error: https://acc.alicdn.com/tfscom/TB1o28iEeuSBuNjy1XcXXcYjFXa.js, 
 JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
 shared memfd open() failed: Function not implemented
 shared memfd open() failed: Function not implemented
+1537187526897	geckodriver	INFO	geckodriver 0.21.0
+1537187526902	geckodriver	INFO	Listening on 127.0.0.1:56632
+1537187527924	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Om7XZyHtIJsS"
+*** You are running in headless mode.
+1537187529453	Marionette	INFO	Listening on port 56638
+1537187529555	Marionette	WARN	TLS certificate errors will be ignored for this session
+1537187529588	Marionette	DEBUG	[2147483649] Frame script loaded
+1537187529589	Marionette	DEBUG	[2147483649] Frame script registered
+1537187529601	Marionette	DEBUG	[2147483649] Received DOM event beforeunload for about:blank
+1537187530112	Marionette	DEBUG	[2147483649] Received DOM event pagehide for about:blank
+JavaScript warning: https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js,kg/global-util/1.0.7/index-min.js,tb/tracker/4.3.5/index.js,kg/tb-nav/2.5.3/index-min.js,secdev/sufei_data/3.3.5/index.js, line 6: Error: WebGL warning: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js,kg/global-util/1.0.7/index-min.js,tb/tracker/4.3.5/index.js,kg/tb-nav/2.5.3/index-min.js,secdev/sufei_data/3.3.5/index.js, line 6: Error: WebGL warning: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1537187530586	Marionette	DEBUG	[2147483649] Received DOM event DOMContentLoaded for https://www.taobao.com/
+1537187536472	Marionette	DEBUG	[2147483649] Received DOM event pageshow for https://www.taobao.com/
+shared memfd open() failed: Function not implemented
+shared memfd open() failed: Function not implemented
+1537187552215	Marionette	DEBUG	[2147483649] Received DOM event beforeunload for https://www.taobao.com/
+1537187552247	Marionette	DEBUG	[2147483649] Received DOM event pagehide for https://www.taobao.com/
+1537187552252	Marionette	DEBUG	[2147483649] Received DOM event unload for https://www.taobao.com/
+1537187552282	Marionette	DEBUG	[2147483649] Received observer notification outer-window-destroyed for 2147483653
+1537187552282	Marionette	DEBUG	[2147483649] Received observer notification outer-window-destroyed for 2147483655
+1537187552282	Marionette	DEBUG	[2147483649] Received observer notification outer-window-destroyed for 2147483657
+JavaScript warning: https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js,kg/global-util/1.0.7/index-min.js,tb/tracker/4.3.5/index.js,kg/tb-nav/2.5.3/index-min.js,secdev/sufei_data/3.3.5/index.js, line 6: Error: WebGL warning: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js,kg/global-util/1.0.7/index-min.js,tb/tracker/4.3.5/index.js,kg/tb-nav/2.5.3/index-min.js,secdev/sufei_data/3.3.5/index.js, line 6: Error: WebGL warning: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1537187552500	Marionette	DEBUG	[2147483649] Received DOM event DOMContentLoaded for https://www.taobao.com/
+1537187552791	Marionette	DEBUG	[2147483649] Received DOM event pageshow for https://www.taobao.com/
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.6.6/index.js, line 1: Error: WebGL warning: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.6.6/index.js, line 1: Error: WebGL warning: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+JavaScript error: https://acc.alicdn.com/tfscom/TB1Hl7WOVXXXXXWXVXXdutXFXXX.js, line 5: TypeError: MBOX[a] is undefined
+JavaScript error: https://acc.alicdn.com/tfscom/TB1Hl7WOVXXXXXWXVXXdutXFXXX.js, line 5: TypeError: MBOX[a] is undefined
+1537189048982	Marionette	INFO	Stopped listening on port 56638

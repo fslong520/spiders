@@ -143,9 +143,18 @@ class Taobao (object):
     # 解析数据:
     def parseItem(self, item, pageNum):
         try:
-            if 'id=' in item.find_element(By.CSS_SELECTOR, '.title a').get_attribute('href'):
+            link = item.find_element(
+                By.CSS_SELECTOR, '.title a').get_attribute('href')
+            if 'id=' in link:
+                productId = re.match(r'(.*id=)(\d+)(&.*)', link).group(2)
+                if 'tmall' in link:
+                    mall = '天猫'
+                else:
+                    mall = '淘宝'
                 product = {
                     'title': item.find_element(By.CSS_SELECTOR, '.title a').text,
+                    'productId': productId,
+                    'mall': mall,
                     'image': item.find_element(By.CSS_SELECTOR, '.pic .img').get_attribute('src'),
                     'price': item.find_element(By.CSS_SELECTOR, '.ctx-box .price strong').text,
                     'deal': item.find_element(By.CSS_SELECTOR, '.deal-cnt').text.split('人')[0],
