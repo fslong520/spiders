@@ -3188,3 +3188,53 @@ JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, li
 JavaScript error: https://acc.alicdn.com/tfscom/TB1Hl7WOVXXXXXWXVXXdutXFXXX.js, line 5: TypeError: MBOX[a] is undefined
 JavaScript error: https://acc.alicdn.com/tfscom/TB1Hl7WOVXXXXXWXVXXdutXFXXX.js, line 5: TypeError: MBOX[a] is undefined
 1537189048982	Marionette	INFO	Stopped listening on port 56638
+1537189364670	geckodriver	INFO	geckodriver 0.21.0
+1537189364675	geckodriver	INFO	Listening on 127.0.0.1:50547
+1537189365698	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-headless" "--disable-gpu" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.jkZd9S0NqNY7"
+*** You are running in headless mode.
+1537189367352	Marionette	INFO	Listening on port 50553
+1537189367429	Marionette	WARN	TLS certificate errors will be ignored for this session
+1537189367465	Marionette	DEBUG	[2147483649] Frame script loaded
+1537189367473	Marionette	DEBUG	[2147483649] Frame script registered
+1537189367489	Marionette	DEBUG	[2147483649] Received DOM event beforeunload for about:blank
+1537189367933	Marionette	DEBUG	[2147483649] Received DOM event pagehide for about:blank
+JavaScript warning: https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js,kg/global-util/1.0.7/index-min.js,tb/tracker/4.3.5/index.js,kg/tb-nav/2.5.3/index-min.js,secdev/sufei_data/3.3.5/index.js, line 6: Error: WebGL warning: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js,kg/global-util/1.0.7/index-min.js,tb/tracker/4.3.5/index.js,kg/tb-nav/2.5.3/index-min.js,secdev/sufei_data/3.3.5/index.js, line 6: Error: WebGL warning: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1537189368390	Marionette	DEBUG	[2147483649] Received DOM event DOMContentLoaded for https://www.taobao.com/
+JavaScript error: https://ald.taobao.com/recommend2.htm?appId=20140506002%2C20140506001%2C201602246%2C07085%2C03014%2C201608180&_ksTS=1537189368438_94&callback=jsonp95, line 2: ReferenceError: jsonp95 is not defined
+1537189380101	Marionette	DEBUG	[2147483649] Received DOM event pageshow for https://www.taobao.com/
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.6.6/index.js, line 1: Error: WebGL warning: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.6.6/index.js, line 1: Error: WebGL warning: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+JavaScript error: https://s.taobao.com/search?data-key=s&data-value=44&ajax=true&_ksTS=1537189382676_240&callback=jsonp241&q=ipad&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=3&ntoffset=0&p4ppushleft=1%2C48, line 3: ReferenceError: jsonp241 is not defined
+shared memfd open() failed: Function not implemented
+shared memfd open() failed: Function not implemented
+JavaScript error: https://s.taobao.com/search?data-key=s&data-value=220&ajax=true&_ksTS=1537189404277_1545&callback=jsonp1546&q=ipad&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.2017.201856-taobao-item.1&ie=utf8&initiative_id=tbindexz_20170306&bcoffset=0&ntoffset=0&p4ppushleft=1%2C48&s=176, line 3: ReferenceError: jsonp1546 is not defined
+1537190536194	geckodriver	INFO	geckodriver 0.21.0
+1537190536199	geckodriver	INFO	Listening on 127.0.0.1:59196
+1537190537232	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.SNVU41edgii5"
+1537190539555	Marionette	INFO	Listening on port 59206
+1537190539565	Marionette	WARN	TLS certificate errors will be ignored for this session
+1537190539605	Marionette	DEBUG	[2147483649] Frame script loaded
+1537190539611	Marionette	DEBUG	[2147483649] Frame script registered
+1537190539651	Marionette	DEBUG	[2147483649] Received DOM event beforeunload for about:blank
+1537190540080	Marionette	DEBUG	[2147483649] Received DOM event pagehide for about:blank
+JavaScript warning: https://g.alicdn.com/??kissy/k/6.2.4/seed-min.js,kg/global-util/1.0.7/index-min.js,tb/tracker/4.3.5/index.js,kg/tb-nav/2.5.3/index-min.js,secdev/sufei_data/3.3.5/index.js, line 6: Error: WebGL warning: Failed to create WebGL context: WebGL creation failed: 
+* Error during native OpenGL init.
+* Exhausted GL driver caps.
+* Exhausted GL driver options.
+1537190540551	Marionette	DEBUG	[2147483649] Received DOM event DOMContentLoaded for https://www.taobao.com/
+JavaScript error: https://textlink.simba.taobao.com/?name=tbhs&cna&nn=&count=13&pid=430266_1006&_ksTS=1537190540561_71&callback=jsonp72, line 2: ReferenceError: jsonp72 is not defined
+JavaScript error: https://drc.alicdn.com/7/1947787_0____?callback=jsonp1947787_0____, line 1: ReferenceError: jsonp1947787_0____ is not defined
+1537190555780	Marionette	DEBUG	[2147483649] Received DOM event pageshow for https://www.taobao.com/
+shared memfd open() failed: Function not implemented
+shared memfd open() failed: Function not implemented
+JavaScript warning: https://g.alicdn.com/secdev/sufei_data/3.6.6/index.js, line 1: Error: WebGL warning: Failed to create WebGL context: WebGL creation failed: 
+* Error during native OpenGL init.
+* Exhausted GL driver caps.
+* Exhausted GL driver options.
+JavaScript error: https://login.taobao.com/jump?target=https://www.tmall.com, line 27: SyntaxError: expected expression, got '<'
+1537190599432	Marionette	INFO	Stopped listening on port 59206
+1537191098338	Marionette	INFO	Stopped listening on port 50553

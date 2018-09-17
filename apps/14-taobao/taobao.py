@@ -40,6 +40,7 @@ class Taobao (object):
         # options.add_argument('-headless')
         options.add_argument('--disable-gpu')
         self.browser = webdriver.Firefox(firefox_options=options)
+        #self.browser = webdriver.Firefox()
         # 隐式等待，最多加载60，所有元素加载完才执行下一步操作：
         # self.browser.implicitly_wait(60)
         self.wait = WebDriverWait(self.browser, 15)
