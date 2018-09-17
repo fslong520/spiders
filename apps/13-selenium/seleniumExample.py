@@ -18,10 +18,11 @@ def example():
 
     # 配置文件地址
     profile_directory = '/home/fslong/.mozilla/firefox/83l1qwct.default'
-    # 加载配置配置
+    # 加载配置
     profile = webdriver.FirefoxProfile(profile_directory)
     browser = webdriver.Firefox(profile)    
     browser.get('https://www.baidu.com')
+
     # 无界面模式：
     options = webdriver.FirefoxOptions()
     options.set_headless()
