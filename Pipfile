@@ -13,6 +13,7 @@ redis = "*"
 ipython = "*"
 selenium = "*"
 pymongo = "*"
+colorama = "*"
 
 [dev-packages]
 
