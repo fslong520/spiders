@@ -1,0 +1,782 @@
+[
+    {
+        "data": [
+            {
+                "Xtitle": "采矿业",
+                "Qnum": 52,
+                "Tnum": 42
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "采矿业启动评定",
+                "Year1": 6,
+                "Year2": 14,
+                "Year3": 17,
+                "Year4": 0
+            },
+            {
+                "Xtitle": "采矿业通过评定",
+                "Year1": 9,
+                "Year2": 10,
+                "Year3": 19,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "冶金",
+                "Qnum": 185,
+                "Tnum": 152
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "冶金启动评定",
+                "Year1": 28,
+                "Year2": 35,
+                "Year3": 85,
+                "Year4": 2
+            },
+            {
+                "Xtitle": "冶金通过评定",
+                "Year1": 25,
+                "Year2": 35,
+                "Year3": 76,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "石化",
+                "Qnum": 296,
+                "Tnum": 245
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "石化启动评定",
+                "Year1": 41,
+                "Year2": 67,
+                "Year3": 147,
+                "Year4": 2
+            },
+            {
+                "Xtitle": "石化通过评定",
+                "Year1": 40,
+                "Year2": 44,
+                "Year3": 146,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "建材",
+                "Qnum": 207,
+                "Tnum": 162
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "建材启动评定",
+                "Year1": 21,
+                "Year2": 66,
+                "Year3": 105,
+                "Year4": 1
+            },
+            {
+                "Xtitle": "建材通过评定",
+                "Year1": 6,
+                "Year2": 51,
+                "Year3": 98,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "机械",
+                "Qnum": 950,
+                "Tnum": 761
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "机械启动评定",
+                "Year1": 101,
+                "Year2": 249,
+                "Year3": 499,
+                "Year4": 16
+            },
+            {
+                "Xtitle": "机械通过评定",
+                "Year1": 64,
+                "Year2": 181,
+                "Year3": 474,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "交通设备制造",
+                "Qnum": 490,
+                "Tnum": 391
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "交通设备制造启动评定",
+                "Year1": 58,
+                "Year2": 125,
+                "Year3": 251,
+                "Year4": 4
+            },
+            {
+                "Xtitle": "交通设备制造通过评定",
+                "Year1": 48,
+                "Year2": 83,
+                "Year3": 236,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "轻工",
+                "Qnum": 596,
+                "Tnum": 487
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "轻工启动评定",
+                "Year1": 62,
+                "Year2": 161,
+                "Year3": 329,
+                "Year4": 6
+            },
+            {
+                "Xtitle": "轻工通过评定",
+                "Year1": 34,
+                "Year2": 103,
+                "Year3": 335,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "纺织",
+                "Qnum": 369,
+                "Tnum": 296
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "纺织启动评定",
+                "Year1": 41,
+                "Year2": 95,
+                "Year3": 197,
+                "Year4": 6
+            },
+            {
+                "Xtitle": "纺织通过评定",
+                "Year1": 31,
+                "Year2": 66,
+                "Year3": 186,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "食品",
+                "Qnum": 287,
+                "Tnum": 222
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "食品启动评定",
+                "Year1": 39,
+                "Year2": 65,
+                "Year3": 148,
+                "Year4": 3
+            },
+            {
+                "Xtitle": "食品通过评定",
+                "Year1": 23,
+                "Year2": 41,
+                "Year3": 145,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "医药",
+                "Qnum": 175,
+                "Tnum": 138
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "医药启动评定",
+                "Year1": 26,
+                "Year2": 41,
+                "Year3": 82,
+                "Year4": 3
+            },
+            {
+                "Xtitle": "医药通过评定",
+                "Year1": 19,
+                "Year2": 37,
+                "Year3": 73,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "烟草",
+                "Qnum": 12,
+                "Tnum": 12
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "烟草启动评定",
+                "Year1": 3,
+                "Year2": 4,
+                "Year3": 2,
+                "Year4": 0
+            },
+            {
+                "Xtitle": "烟草通过评定",
+                "Year1": 2,
+                "Year2": 4,
+                "Year3": 4,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "电子",
+                "Qnum": 721,
+                "Tnum": 538
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "电子启动评定",
+                "Year1": 70,
+                "Year2": 195,
+                "Year3": 391,
+                "Year4": 13
+            },
+            {
+                "Xtitle": "电子通过评定",
+                "Year1": 47,
+                "Year2": 136,
+                "Year3": 345,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "包装",
+                "Qnum": 97,
+                "Tnum": 76
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "包装启动评定",
+                "Year1": 7,
+                "Year2": 31,
+                "Year3": 55,
+                "Year4": 1
+            },
+            {
+                "Xtitle": "包装通过评定",
+                "Year1": 3,
+                "Year2": 17,
+                "Year3": 55,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "废弃资源综合利用业",
+                "Qnum": 16,
+                "Tnum": 11
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "废弃资源综合利用业启动评定",
+                "Year1": 1,
+                "Year2": 4,
+                "Year3": 10,
+                "Year4": 1
+            },
+            {
+                "Xtitle": "废弃资源综合利用业通过评定",
+                "Year1": 0,
+                "Year2": 1,
+                "Year3": 10,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "电力",
+                "Qnum": 106,
+                "Tnum": 87
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "电力启动评定",
+                "Year1": 14,
+                "Year2": 23,
+                "Year3": 50,
+                "Year4": 3
+            },
+            {
+                "Xtitle": "电力通过评定",
+                "Year1": 5,
+                "Year2": 25,
+                "Year3": 47,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "服务业—其他服务业",
+                "Qnum": 143,
+                "Tnum": 114
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "服务业—其他服务业启动评定",
+                "Year1": 19,
+                "Year2": 42,
+                "Year3": 62,
+                "Year4": 1
+            },
+            {
+                "Xtitle": "服务业—其他服务业通过评定",
+                "Year1": 13,
+                "Year2": 34,
+                "Year3": 56,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "其他",
+                "Qnum": 273,
+                "Tnum": 190
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "其他启动评定",
+                "Year1": 46,
+                "Year2": 83,
+                "Year3": 104,
+                "Year4": 1
+            },
+            {
+                "Xtitle": "其他通过评定",
+                "Year1": 25,
+                "Year2": 57,
+                "Year3": 101,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "建筑业",
+                "Qnum": 32,
+                "Tnum": 23
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "建筑业启动评定",
+                "Year1": 0,
+                "Year2": 9,
+                "Year3": 20,
+                "Year4": 1
+            },
+            {
+                "Xtitle": "建筑业通过评定",
+                "Year1": 1,
+                "Year2": 1,
+                "Year3": 20,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "服务业—批发零售业",
+                "Qnum": 20,
+                "Tnum": 14
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "服务业—批发零售业启动评定",
+                "Year1": 0,
+                "Year2": 1,
+                "Year3": 18,
+                "Year4": 0
+            },
+            {
+                "Xtitle": "服务业—批发零售业通过评定",
+                "Year1": 1,
+                "Year2": 0,
+                "Year3": 13,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "服务业—交通物流业",
+                "Qnum": 21,
+                "Tnum": 16
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "服务业—交通物流业启动评定",
+                "Year1": 0,
+                "Year2": 3,
+                "Year3": 16,
+                "Year4": 0
+            },
+            {
+                "Xtitle": "服务业—交通物流业通过评定",
+                "Year1": 2,
+                "Year2": 0,
+                "Year3": 14,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "服务业—信息传输服务业",
+                "Qnum": 1,
+                "Tnum": 1
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "服务业—信息传输服务业启动评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 1,
+                "Year4": 0
+            },
+            {
+                "Xtitle": "服务业—信息传输服务业通过评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 1,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "服务业—软件和信息技术服务业",
+                "Qnum": 70,
+                "Tnum": 46
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "服务业—软件和信息技术服务业启动评定",
+                "Year1": 2,
+                "Year2": 10,
+                "Year3": 56,
+                "Year4": 2
+            },
+            {
+                "Xtitle": "服务业—软件和信息技术服务业通过评定",
+                "Year1": 0,
+                "Year2": 3,
+                "Year3": 43,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "农业",
+                "Qnum": 12,
+                "Tnum": 7
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "农业启动评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 12,
+                "Year4": 0
+            },
+            {
+                "Xtitle": "农业通过评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 7,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "林业",
+                "Qnum": 1,
+                "Tnum": 1
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "林业启动评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 1,
+                "Year4": 0
+            },
+            {
+                "Xtitle": "林业通过评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 1,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "畜牧业",
+                "Qnum": 6,
+                "Tnum": 3
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "畜牧业启动评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 5,
+                "Year4": 1
+            },
+            {
+                "Xtitle": "畜牧业通过评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 3,
+                "Year4": 0
+            }
+        ]
+    },
+    {
+        "data": [
+            {
+                "Xtitle": "渔业",
+                "Qnum": 0,
+                "Tnum": 0
+            },
+            {
+                "Xtitle": "product",
+                "Year1": 2016,
+                "Year2": 2017,
+                "Year3": 2018,
+                "Year4": 2019
+            },
+            {
+                "Xtitle": "渔业启动评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 0,
+                "Year4": 0
+            },
+            {
+                "Xtitle": "渔业通过评定",
+                "Year1": 0,
+                "Year2": 0,
+                "Year3": 0,
+                "Year4": 0
+            }
+        ]
+    }
+]
