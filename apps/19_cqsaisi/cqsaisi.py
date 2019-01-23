@@ -10,7 +10,7 @@ __version__ = '0.0.1'
 import json
 import os,re
 
-import pyquery
+import pyquery,time,datetime
 import requests,traceback
 
 
@@ -38,8 +38,13 @@ class Spider(object):
         self.newNewsNum=0
         self.newNews={}
         self.oldJsonData={}
+        self.date=str(time.strftime("%Y-%m-%d", time.localtime()))
+        yesterday=datetime.datetime.now()+datetime.timedelta(days=-1)
+        self.yesterday=str(yesterday.strftime("%Y-%m-%d"))
+        '''
         with open(os.path.join(os.path.dirname(__file__),'新公告.txt'),'w+',encoding='utf-8') as f:
             f.write('欢迎使用！\n')
+        '''
         if os.path.isfile(os.path.join(os.path.dirname(__file__), 'news.json')):
             with open(os.path.join(os.path.dirname(__file__), 'news.json'), 'r', encoding='utf-8') as f:
                 self.oldJsonData = json.load(f)
@@ -92,12 +97,13 @@ class Cqsaisi(Spider):
                 print('----------------------\n没有查找到新的通知公告！\n')
             else:
                 print('----------------------\n找到了{0}条新纪录，如下：\n'.format(m))
-                self.saveNewNews('-------------------------------\n经信委网站新公告:\n',newNews)
+                #self.saveNewNews('-------------------------------\n经信委网站新公告:\n',newNews)
                 for i in newNews:
                     print('标题：', i['标题'], '网址：', i['网址'])
         else:
             print('没有找到本地数据，开始显示所有获取到的信息...')
-            self.saveNewNews('-------------------------------\n经信委网站新公告:\n',jsonData)
+            #self.saveNewNews('-------------------------------\n经信委网站新公告:\n',jsonData)
+            newNews=jsonData
             for i in jsonData:
                 print('标题：', i['标题'], '网址：', i['网址'])
         self.newNews['jxw']=newNews
@@ -148,12 +154,13 @@ class Cqsaisi(Spider):
                 print('----------------------\n没有查找到新的通知公告！\n')
             else:
                 print('----------------------\n找到了{0}条新纪录，如下：\n'.format(m))
-                self.saveNewNews('-------------------------------\n科技局网站新公告:\n',newNews)
+                #self.saveNewNews('-------------------------------\n科技局网站新公告:\n',newNews)
                 for i in newNews:
                     print('标题：', i['标题'], '网址：', i['网址'])
         else:
             print('没有找到本地数据，开始显示所有获取到的信息...')
-            self.saveNewNews('-------------------------------\n科技局网站新公告:\n',jsonData)
+            #self.saveNewNews('-------------------------------\n科技局网站新公告:\n',jsonData)
+            newNews=jsonData
             for i in jsonData:
                 print('标题：', i['标题'], '网址：', i['网址'])
         self.newNews['kjj']=newNews
@@ -198,12 +205,13 @@ class Cqsaisi(Spider):
                 print('----------------------\n没有查找到新的通知公告！\n')
             else:
                 print('----------------------\n找到了{0}条新纪录，如下：\n'.format(m))
-                self.saveNewNews('-------------------------------\n商务委员会网站新公告:\n',newNews)
+                #self.saveNewNews('-------------------------------\n商务委员会网站新公告:\n',newNews)
                 for i in newNews:
                     print('标题：', i['标题'], '网址：', i['网址'])
         else:
             print('没有找到本地数据，开始显示所有获取到的信息...')
-            self.saveNewNews('-------------------------------\n商务委员会网站新公告:\n',jsonData)
+            newNews=jsonData
+            #self.saveNewNews('-------------------------------\n商务委员会网站新公告:\n',jsonData)
             for i in jsonData:
                 print('标题：', i['标题'], '网址：', i['网址'])
 
@@ -255,12 +263,13 @@ class Cqsaisi(Spider):
                 print('----------------------\n没有查找到新的通知公告！\n')
             else:
                 print('----------------------\n找到了{0}条新纪录，如下：\n'.format(m))
-                self.saveNewNews('-------------------------------\n发改委网站新公告:\n',newNews)
+                #self.saveNewNews('-------------------------------\n发改委网站新公告:\n',newNews)
                 for i in newNews:
                     print('标题：', i['标题'], '网址：', i['网址'])
         else:
             print('没有找到本地数据，开始显示所有获取到的信息...')
-            self.saveNewNews('-------------------------------\n发改委网站新公告:\n',jsonData)
+            newNews=jsonData
+            #self.saveNewNews('-------------------------------\n发改委网站新公告:\n',jsonData)
             for i in jsonData:
                 print('标题：', i['标题'], '网址：', i['网址'])
         self.results['fgw']=jsonData
@@ -276,6 +285,39 @@ class Cqsaisi(Spider):
     def saveAllNews(self):
         with open(os.path.join(os.path.dirname(__file__), 'news.json'), 'w+', encoding='utf-8') as f:
             json.dump(self.results, f, ensure_ascii=False, indent=4)
+
+    def createHtml(self):
+        htmlHead='<!DOCTYPE html><html><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>通知公告聚合</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>ul li{list-style: none;}a{text-decoration:none;}</style></head><body>'
+        htmlFoot='</body></html>'
+        htmlbody='<div style="width: 25%; float: left;"><p><strong>经信委网站公告：</strong></p><ul>'
+        for i in self.results['jxw']:
+            if str(i['标题']).endswith(self.date) or i not in self.oldJsonData.get('jxw',['test']) :
+                htmlbody+='<li><a href="{0}" style="color:red;">【新】{1}</a><hr><li>'.format(i['网址'],i['标题'])
+            else:
+                htmlbody+='<li><a href="{0}">{1}</a><hr><li>'.format(i['网址'],i['标题'])
+        htmlbody+='</ul></div>'
+        htmlbody+='<div style="width: 25%; float: left;"><p><strong>科技局网站公告：</strong></p><ul>'
+        for i in self.results['kjj']:
+            if str(i['标题']).endswith(self.date) or i not in self.oldJsonData.get('kjj',['test']):
+                htmlbody+='<li><a href="{0}" style="color:red;">【新】{1}</a><hr><li>'.format(i['网址'],i['标题'])
+            else:
+                htmlbody+='<li><a href="{0}">{1}</a><hr><li>'.format(i['网址'],i['标题'])
+        htmlbody+='</ul></div>'
+        htmlbody+='<div style="width: 25%; float: left;"><p><strong>商务委员会网站公告：</strong></p><ul>'
+        for i in self.results['swwyh']:
+            if str(i['标题']).endswith(self.date)  or i not in self.oldJsonData.get('swwyh',['test']):
+                htmlbody+='<li><a href="{0}" style="color:red;">【新】{1}</a><hr><li>'.format(i['网址'],i['标题'])
+            else:
+                htmlbody+='<li><a href="{0}">{1}</a><hr><li>'.format(i['网址'],i['标题'])
+        htmlbody+='</ul></div>'
+        htmlbody+='<div style="width: 25%; float: left;"><p><strong>发改委网站公告：</strong></p><ul>'
+        for i in self.results['fgw']:
+            if str(i['标题']).endswith(self.date)  or i not in self.oldJsonData.get('fgw',['test']):
+                htmlbody+='<li><a href="{0}" style="color:red;">【新】{1}</a><hr><li>'.format(i['网址'],i['标题'])
+            else:
+                htmlbody+='<li><a href="{0}">{1}</a><hr><li>'.format(i['网址'],i['标题'])
+        htmlbody+='</ul></div>'
+        return (htmlHead+htmlbody+htmlFoot)
 
 
 
@@ -299,43 +341,14 @@ if __name__ == '__main__':
     except:
         print('发改委数据爬取出错，请联系作者处理。')
     cqsaisi.saveAllNews()
-    htmlHead='<!DOCTYPE html><html><head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>通知公告聚合</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>ul li{list-style: none;}a{text-decoration:none;}</style></head><body>'
-    htmlFoot='</body></html>'
-    htmlbody='<div style="width: 25%; float: left;"><p><strong>经信委网站公告：</strong></p><ul>'
-    for i in cqsaisi.results['jxw']:
-        if i in cqsaisi.newNews['jxw']:
-            htmlbody+='<li><a href="{0}" style="color:red;">【新】{1}</a><hr><li>'.format(i['网址'],i['标题'])
-        else:
-            htmlbody+='<li><a href="{0}">{1}</a><hr><li>'.format(i['网址'],i['标题'])
-    htmlbody+='</ul></div>'
-    htmlbody+='<div style="width: 25%; float: left;"><p><strong>科技局网站公告：</strong></p><ul>'
-    for i in cqsaisi.results['kjj']:
-        if i in cqsaisi.newNews['kjj']:
-            htmlbody+='<li><a href="{0}" style="color:red;">【新】{1}</a><hr><li>'.format(i['网址'],i['标题'])
-        else:
-            htmlbody+='<li><a href="{0}">{1}</a><hr><li>'.format(i['网址'],i['标题'])
-    htmlbody+='</ul></div>'
-    htmlbody+='<div style="width: 25%; float: left;"><p><strong>商务委员会网站公告：</strong></p><ul>'
-    for i in cqsaisi.results['swwyh']:
-        if i in cqsaisi.newNews['swwyh']:
-            htmlbody+='<li><a href="{0}" style="color:red;">【新】{1}</a><hr><li>'.format(i['网址'],i['标题'])
-        else:
-            htmlbody+='<li><a href="{0}">{1}</a><hr><li>'.format(i['网址'],i['标题'])
-    htmlbody+='</ul></div>'
-    htmlbody+='<div style="width: 25%; float: left;"><p><strong>发改委网站公告：</strong></p><ul>'
-    for i in cqsaisi.results['fgw']:
-        if i in cqsaisi.newNews['fgw']:
-            htmlbody+='<li><a href="{0}" style="color:red;">【新】{1}</a><hr><li>'.format(i['网址'],i['标题'])
-        else:
-            htmlbody+='<li><a href="{0}">{1}</a><hr><li>'.format(i['网址'],i['标题'])
-    htmlbody+='</ul></div>'
+    
     with open(os.path.join(os.path.dirname(__file__), '新闻.html'), 'w+', encoding='utf-8') as f:
-        f.write(htmlHead+htmlbody+htmlFoot)
+        f.write(cqsaisi.createHtml())
 
 
         
 
-    print('\n-------------------------\n新通知公告获取完毕，谢谢使用，可以打开《新公告.txt》查看本次获取到的新通知。')
+    print('\n-------------------------\n新通知公告获取完毕，谢谢使用，可以打开《新闻.html》查看本次获取到的新通知。')
     input('-------------------------\n请按回车键退出...')
     
     
